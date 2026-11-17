@@ -1,0 +1,22 @@
+# Operating system / editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Temporary output and local logs
+*.tmp
+*.log
+*.bak
+*.orig
+
+# Local exports / generated archives
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Test scratch files
+.tests-temp/
