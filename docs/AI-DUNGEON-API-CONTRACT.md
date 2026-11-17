@@ -39,8 +39,8 @@ The current reference documents a 16 MB memory limit and a two-second execution 
 
 - Returning `{ text: '...' }` replaces the hook's text.
 - `state.message` is documented as a string shown to the user; verify exactly how it displays in the current editor/adventure.
-- `stop: true` prevents the game loop from proceeding, but the current reference explicitly says returning `stop` from `onInput` throws an error (`Unable to run scenario scripts`).
-- Therefore V0.1 must **not** use `return { stop: true }` from `onInput` as the command-only shortcut. Test other command feedback/routing options without relying on undocumented behaviour.
+- The official reference is internally inconsistent: the generic Return section says returning `stop` from `onInput` throws `Unable to run scenario scripts`, while the built-in Command Parser example returns `{ stop: true }` to suppress generation.
+- Treat this as **unverified platform behaviour**. Do not make command handling depend on it until it has been tested in Script Test and a disposable live adventure. Record the observed result and date in the Test Log.
 - Returning empty text also causes errors in Input and Output.
 
 ## Test and inspection surfaces
