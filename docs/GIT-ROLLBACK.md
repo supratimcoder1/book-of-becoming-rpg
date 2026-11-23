@@ -64,11 +64,15 @@ Avoid `git reset --hard` as a normal rollback tool. It can discard local work an
 
 1. Stop editing the AI Dungeon Scenario.
 2. Identify the exact release tag and commit SHA.
-3. Restore the four local source files to that release.
+3. Restore the four local source files and the `prompts/` directory to that release.
 4. Test those files in a disposable adventure.
-5. Copy the tested Library, Input, Context and Output sections into the Scenario editor.
-6. Save, take a turn, inspect context/state and check for script errors.
-7. Record the rollback as a Change Log entry.
+5. Copy Library, Input, Context and Output into their matching Scenario editor sections.
+6. Restore AI Instructions, Plot Essentials, and Author's Note from the tagged `prompts/` files.
+7. Restore Scenario configuration from `docs/SCENARIO-CONFIG.md` and the release's archived editor snapshot.
+8. Save, take a turn, inspect context/state and check for script errors.
+9. Record the rollback as a Change Log entry.
+
+Prompt text and Scenario settings are deployments too. Git can restore the canonical text files, but it cannot automatically change the live Scenario editor fields or toggle Memory System settings. Always keep a dated text export or screenshots of the deployed configuration.
 
 ## Important: source vs runtime state
 
